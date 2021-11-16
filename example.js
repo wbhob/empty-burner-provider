@@ -1,5 +1,5 @@
-var Web3 = require('web3');
-var BurnerProvider = require('./index.js')
+var Web3 = require("web3");
+var BurnerProvider = require("./index.js");
 
 // you can pass in just the RPC endpoint:
 //var web3 = new Web3(new BurnerProvider('http://localhost:8545'));
@@ -16,19 +16,19 @@ var BurnerProvider = require('./index.js')
 //}));
 //or you can pass it a websocket:
 //var web3 = new Web3(new BurnerProvider('wss://mainnet.infura.io/ws'));
-var web3 = new Web3(new BurnerProvider({
-   rpcUrl: 'wss://mainnet.infura.io/ws',
-}));
+var web3 = new Web3(new BurnerProvider());
 
-console.log(web3.version)
+console.log(web3.version);
 web3.eth.getBlockNumber().then(console.log);
-web3.eth.getAccounts().then((accounts)=>{
-    console.log("Accounts:",accounts)
-    web3.eth.getBalance(accounts[0]).then((balance)=>{
-        console.log("balance:",balance)
-        web3.eth.sign(web3.utils.utf8ToHex("Hello world"),accounts[0]).then((sig)=>{
-            console.log("SIG:",sig)
-            web3.currentProvider.stop()
-        });
-    })
+web3.eth.getAccounts().then((accounts) => {
+  console.log("Accounts:", accounts);
+  web3.eth.getBalance(accounts[0]).then((balance) => {
+    console.log("balance:", balance);
+    web3.eth
+      .sign(web3.utils.utf8ToHex("Hello world"), accounts[0])
+      .then((sig) => {
+        console.log("SIG:", sig);
+        web3.currentProvider.stop();
+      });
+  });
 });
