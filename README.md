@@ -1,4 +1,23 @@
-# burner-provider
+# no-burner-provider
+
+⚠️ **NOTE:** This package is for Next.js users who want to **exclude** burner-provider from their apps because they don't need it and it inflates their bundle size. If you are using burner wallets in your dApp, use https://github.com/austintgriffith/burner-provider.
+
+To use in Next.js, include this property in the `webpack` part of your next.config.js:
+
+```js
+module.exports = {
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'burner-provider': 'no-burner-provider',
+    }
+
+    return config
+  },
+}
+```
+
+----------------------------------
 
 Ephemeral key pair web3 provider
 
