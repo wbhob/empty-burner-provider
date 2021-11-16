@@ -1,4 +1,4 @@
-# no-burner-provider
+# empty-burner-provider
 
 ⚠️ **NOTE:** This package is for Next.js users who want to **exclude** burner-provider from their apps because they don't need it and it inflates their bundle size. If you are using burner wallets in your dApp, use https://github.com/austintgriffith/burner-provider.
 
