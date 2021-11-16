@@ -9,7 +9,7 @@ module.exports = {
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      'burner-provider': 'no-burner-provider',
+      'burner-provider': 'empty-burner-provider',
     }
 
     return config
